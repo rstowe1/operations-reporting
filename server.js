@@ -8,7 +8,7 @@ connectDB();
 
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => res.json({ msg: "Welcome to Operations" }));
+// app.get("/", (req, res) => res.json({ msg: "Welcome to Operations" }));
 
 app.use("/api/approvals", require("./routes/approvals"));
 app.use("/api/status", require("./routes/status"));
