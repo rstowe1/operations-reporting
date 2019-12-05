@@ -9,6 +9,10 @@ const ApprovalSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  queryDate: {
+    type: Date,
+    required: true
+  },
   approved: {
     type: Number,
     required: true

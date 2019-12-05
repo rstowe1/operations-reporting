@@ -9,6 +9,13 @@ const StatusSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  queryDate: {
+    type: Date,
+    value: new Date()
+      .toJSON()
+      .slice(0, 10)
+      .replace(/-/g, "/")
+  },
   comment: {
     type: String,
     required: true
