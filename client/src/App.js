@@ -1,25 +1,31 @@
-import React, { Fragment, useState } from "react";
-import Header from "./components/Header";
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import StatusState from "./context/status/StatusState";
+
+import Navbar from "./components/layout/Navbar";
+import Status from "./components/status/Status";
+import Approvals from "./components/approvals/Approvals";
+import "./App.css";
+import ApprovalsState from "./context/approvals/ApprovalsState";
 
 const App = () => {
-  const [comment, setComment] = useState("");
-  const [date, setDate] = useState("");
-  const [name, setName] = useState("");
-  const [load, setLoad] = useState("");
-
   return (
-    <Fragment>
-      <Header
-        comment={comment}
-        setComment={setComment}
-        date={date}
-        setDate={setDate}
-        name={name}
-        setName={setName}
-        load={load}
-        setLoad={setLoad}
-      />
-    </Fragment>
+    <StatusState>
+      <ApprovalsState>
+        <Router>
+          <Fragment>
+            <Navbar />
+            <div className="container">
+              <Switch>
+                <Route exact path="/status" component={Status} />
+                <Route exact path="/approvals" component={Approvals} />
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+      </ApprovalsState>
+    </StatusState>
   );
 };
 
