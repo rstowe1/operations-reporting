@@ -28,6 +28,8 @@ const StatusForm = () => {
     clearAll();
   };
 
+  const exportData = e => {};
+
   const clearAll = () => {
     SetStatus({ name: "", date: "", comment: "", queryDate: Date() });
   };
@@ -61,6 +63,12 @@ const StatusForm = () => {
           type="submit"
           value={"Submit"}
           className="btn btn-primary btn-block"
+        />
+        <input
+          type="submit"
+          value={"Export"}
+          className="btn btn-primary btn-block"
+          onClick={exportData()}
         />
       </div>
     </form>
