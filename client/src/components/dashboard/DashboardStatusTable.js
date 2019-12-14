@@ -4,7 +4,7 @@ import "react-table/react-table.css";
 import axios from "axios";
 import StatusContext from "../../context/status/statusContext";
 
-const Table = () => {
+const Table = props => {
   const [tableData, setTableData] = useState([]);
 
   const statusContext = useContext(StatusContext);
@@ -13,14 +13,20 @@ const Table = () => {
     axios
       .get("/api/status")
       .then(function(response) {
-        setTableData(response.data);
+        console.log(response.data);
+        setTableData(
+          response.data.filter(item => {
+            let itemDate = new Date(item.date);
+            let variableDate = new Date() - 604800000;
+
+            return itemDate > variableDate;
+          })
+        );
       })
       .catch(function(error) {
         console.log(error);
       });
   }, [statusContext]);
-
-  // const data = Object.values(tableData ? tableData : []);
 
   const columns = [
     {

@@ -11,6 +11,9 @@ const Navbar = () => {
       <Fragment>
         <ul>
           <li>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
             <Link to="/status">Status</Link>
           </li>
           <li>
