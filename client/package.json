@@ -4,18 +4,19 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0",
     "axios": "^0.19.0",
     "config": "^3.2.4",
     "express": "^4.17.1",
     "express-validator": "^6.3.0",
     "formik": "^2.0.6",
     "mongoose": "^5.7.12",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
     "react-table": "^6.10.3",
-    "reactstrap": "^8.1.1"
+    "reactstrap": "^8.1.1",
+    "schema-utils": "^2.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
