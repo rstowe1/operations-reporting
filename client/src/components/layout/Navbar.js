@@ -1,11 +1,7 @@
-import React, { Fragment, useContext } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import StatusContext from "../../context/status/statusContext";
 
 const Navbar = () => {
-  const statusContext = useContext(StatusContext);
-
   return (
     <div className="navbar bg-primary">
       <Fragment>

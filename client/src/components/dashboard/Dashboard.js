@@ -1,7 +1,6 @@
 import React from "react";
 import DashboardStatusTable from "./DashboardStatusTable";
 import DashboardApprovalsTable from "./DashboardApprovalsTable";
-import axios from "axios";
 
 const Dashboard = () => {
   return (

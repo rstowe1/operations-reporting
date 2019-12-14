@@ -13,7 +13,6 @@ const Table = ({ load }) => {
     axios
       .get("/api/approvals")
       .then(function(response) {
-        console.log(response.data);
         setTableData(
           response.data.filter(item => {
             let itemDate = new Date(item.date);
@@ -27,8 +26,6 @@ const Table = ({ load }) => {
         console.log(error);
       });
   }, [approvalsContext]);
-
-  const data = Object.values(tableData ? tableData : []);
 
   const columns = [
     {
