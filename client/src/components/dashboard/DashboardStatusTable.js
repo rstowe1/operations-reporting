@@ -13,7 +13,6 @@ const Table = props => {
     axios
       .get("/api/status")
       .then(function(response) {
-        console.log(response.data);
         setTableData(
           response.data.filter(item => {
             let itemDate = new Date(item.date);
